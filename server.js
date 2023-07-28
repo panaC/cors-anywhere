@@ -16,6 +16,9 @@ function parseEnvList(env) {
   return env.split(',');
 }
 
+console.log("blackList:", originBlacklist);
+console.log("whiteList:", originWhitelist);
+
 // Set up rate-limiting to avoid abuse of the public CORS Anywhere server.
 var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELIMIT);
 
