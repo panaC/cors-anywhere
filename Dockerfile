@@ -1,0 +1,19 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+ENV PORT 8000
+ENV HOST "0.0.0.0"
+ENV CORSANYWHERE_BLACKLIST ""
+ENV CORSANYWHERE_WHITELIST ""
+ENV CORSANYWHERE_RATELIMIT ""
+
+EXPOSE $PORT
+
+CMD ["node", "server.js"]
